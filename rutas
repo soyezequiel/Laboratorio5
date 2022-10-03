@@ -1,0 +1,6 @@
+Prefix Verb     URI Pattern             Controller#Action
+monsters GET    /monsters(.:format)          monsters#index
+         POST   /monsters(.:format)          monsters#create
+monster PATCH  /monsters/:id(.:format)       monsters#update
+        PUT    /monsters/:id(.:format)       monsters#update
+    root GET    /  
