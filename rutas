@@ -1,6 +1,31 @@
-Prefix Verb     URI Pattern             Controller#Action
-monsters GET    /monsters(.:format)          monsters#index
-         POST   /monsters(.:format)          monsters#create
-monster PATCH  /monsters/:id(.:format)       monsters#update
-        PUT    /monsters/:id(.:format)       monsters#update
-    root GET    /  
+Controller#Action
+                monsters GET    /monsters(.:format)
+monsters#index
+                POST            /monsters(.:format)
+monsters#create
+                new_monster GET /monsters/new(.:format)
+monsters#new
+                monster GET     /monsters/:id(.:format)
+monsters#show
+                PATCH           /monsters/:id(.:format)
+monsters#update
+                PUT             /monsters/:id(.:format)
+monsters#update
+                tweets GET      /tweets(.:format)
+tweets#index
+                POST            /tweets(.:format)
+tweets#create
+                new_tweet GET   /tweets/new(.:format)
+tweets#new
+                edit_tweet GET  /tweets/:id/edit(.:format)
+tweets#edit
+                tweet GET       /tweets/:id(.:format)
+tweets#show
+                PATCH           /tweets/:id(.:format)
+tweets#update
+                PUT             /tweets/:id(.:format)
+tweets#update
+                DELETE          /tweets/:id(.:format)
+tweets#destroy
+                root GET        /
+tweets#index

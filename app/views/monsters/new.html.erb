@@ -1,0 +1,10 @@
+<h2 class="py-2 mb-0">Nuevo monster</h2>
+<%= elNuevo=Monster.new%>
+<%= form_with model: elNuevo do |fa| %>
+<%= fa.search_field  :name, placeholder: "nombre", size:"30x1" %> <br>
+<%= fa.text_area :description, placeholder: "Descripcion" %><br>
+<%= fa.telephone_field :phone, placeholder: "telefono"%><br>
+<%= fa.datetime_local_field  :birthdate, placeholder: "fecha de nacimiento"%>
+<%= fa.submit "crear" %>
+<%end%>
+
