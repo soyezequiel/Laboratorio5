@@ -11,7 +11,8 @@ def index
   def create
     @tweet=Tweet.new(tweet_params)
     if  @tweet.save
-      redirect_to @tweet
+      redirect_to @tweet, notice: "todo legal"
+
     else
       render :new
     end
