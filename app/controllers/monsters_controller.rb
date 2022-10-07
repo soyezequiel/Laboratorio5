@@ -9,23 +9,26 @@ class MonstersController < ApplicationController
   def create
     @nuevoMonster=Monster.new(parametrosStrongMonster)
     if (@nuevoMonster.save)
-      redirect_to edit_monster_path(1)  #hay que arreglar esto
+      redirect_to edit_monster_path(@nuevoMonster.id)
     else
       render :new
     end
   end
   def parametrosStrongMonster 
-    params.require(:monster).permit(:name, :description, :phone, :birthdate)
+    params.require(:monster).permit( :name, :description, :phone, :birthdate)
   end
+
   def edit
-    @monsterD=Monster.find_by(parametrosStrongMonsteredit)
+    @monsterD=Monster.find(params[:id])
+  end
+  def update
+    @monsterD=Monster.find(params[:id])
+    @monsterD.update(parametrosStrongMonster)
     if (@monsterD.save)
-      redirect_to @monsterD, notice: "Monster creado"
+      redirect_to monster_path, notice: "Monster creado"
     else
-      render :new
+      render :edit
     end
   end
-    def parametrosStrongMonsteredit 
-      params.require(:monster).permit(:id)
-    end
+  
   end
