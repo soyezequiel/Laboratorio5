@@ -9,15 +9,16 @@ class Phone
             query:{
                 api_key: Rails.application
                 .credentials
-                .abstractapi_api_key[:access_key_id],
-                tel: @tel
+                .l[:pepito],
+                phone: @tel
                 }
         })
-
+        puts response
         response["valid"]
+        
     end
 end
 #< ApplicationRecord
 
         # Rails.application.credentials.abstractapi_api_key
-        #response["is_valid_number"]
+        #response["is_valid_number"]X

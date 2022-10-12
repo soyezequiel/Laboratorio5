@@ -6,12 +6,17 @@ class MonstersController < ApplicationController
   def show
     @monster = Monster.find(params[:id])
   end
+
+  def new
+    @elNuevo=Monster.new
+  end
+  
   def create
-    @nuevoMonster=Monster.new(parametrosStrongMonster)
-    if (@nuevoMonster.save)
-      redirect_to edit_monster_path(@nuevoMonster.id)
+    @elNuevo=Monster.new(parametrosStrongMonster)
+    if (@elNuevo.save)
+      redirect_to edit_monster_path(@elNuevo.id)
     else
-      render :new
+      render :new, status: :see_other
     end
   end
   def parametrosStrongMonster 
@@ -21,6 +26,7 @@ class MonstersController < ApplicationController
   def edit
     @monsterD=Monster.find(params[:id])
   end
+
   def update
     @monsterD=Monster.find(params[:id])
     @monsterD.update(parametrosStrongMonster)

@@ -3,10 +3,10 @@ class Monster < ApplicationRecord
   validate :numero_de_telefono_tiene_que_ser_valido
 
   def numero_de_telefono_tiene_que_ser_valido
-    if NumberValidator.new(phone).valid?
+    if Phone.new(phone).valid?
       return
     else 
-      error.add(:phone, :invalid)
+      errors.add(:phone, :invalid, message: "pepito")
     end
 
   end
