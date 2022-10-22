@@ -1,3 +1,8 @@
 <h2 class="py-2 mb-0">Nuevo Tweet</h2>
 
-<%= render "form", tweet: @tweet %>
+<%= form_with model: @tweetNuevo do |f| %>
+  <%= f.collection_select :monster_id, Monster.order(:name), :id, :name, {}, { class: "form-select mb-2" } %>
+  <%= f.text_area :content, placeholder: "¿Qué está pasando?", class: "form-control mb-2" %>
+
+  <%= f.submit "Twittear", class: "btn btn-primary mb-2" %>
+<% end %>

@@ -1,4 +1,4 @@
-#<!-- <%# Update me %><%= @monsters.inspect %> --!>
-<% @monsters.each do |mon| %>
-  nombre:  <%= link_to mon.name, mon %> <br>
+<!-- <%# Update me %><%= @monsters.inspect %> --!>
+<% @monsters.each do |monster| %>
+  <%= render monster%>
 <%end%>
